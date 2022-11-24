@@ -1,7 +1,7 @@
 terraform {
-  backend "s3" {
-    bucket = "ta-terraform-tfstates-727250514989"
-    key    = "sprint1/week2/training-terraform/terraform.tfstates"
-    dynamodb_table = "terraform-lock"
-  }
+    backend "s3" {
+        bucket = "ta-terraform-tfstates-317752533111-olga"
+        key = "playground/olga/terraform.tfstates"
+        dynamodb_table = "terraform-lock"
+    }
 }
