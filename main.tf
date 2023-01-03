@@ -1,7 +1,7 @@
 #resource "resource_type" "resource_name" for terraform
-resource "aws_s3_bucket" "ta_backend_bucket" {
+resource "aws_s3_bucket" "backend_bucket" {
   #bucket = "bucket_name_globally_unique" for aws
-  bucket = "ta-terraform-tfstates-317752533111-olga"
+  bucket = "ta-terraform-tfstates-054867543329-olga"
 
   #meta-data
   lifecycle {
@@ -9,14 +9,14 @@ resource "aws_s3_bucket" "ta_backend_bucket" {
     }
 
     tags = {
-        Name = "ta-terraform-tfstates-317752533111-olga"
+        Name = "ta-terraform-tfstates-054867543329-olga"
         Environment = "Test"
     }
 }
 
 resource "aws_s3_bucket_versioning" "version_my_bucket" {
     #redirect to get the name of the bucket we want to versioning
-  bucket = aws_s3_bucket.ta_backend_bucket.id
+  bucket = aws_s3_bucket.backend_bucket.id
 
   versioning_configuration {
     status = "Enabled"
